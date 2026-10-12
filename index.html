@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الدليل المتكامل للسكرتير المحترف في التعليم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f6fb; --card:#ffffff; --ink:#1a2333; --muted:#64748b;
+  --primary:#0e63b6; --primary2:#0a4a8a; --accent:#f59e0b; --accent2:#10b981;
+  --border:#e2e8f0; --shadow:0 8px 30px rgba(14,99,182,.08);
+  --radius:16px;
+}
+[data-theme="dark"]{
+  --bg:#0b1220; --card:#111c33; --ink:#eaf0ff; --muted:#94a3b8;
+  --primary:#3b9dff; --primary2:#7cc0ff; --border:#1f2f4d;
+  --shadow:0 8px 30px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Cairo','Tajawal',Tahoma,sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;transition:.3s}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:auto;padding:0 18px}
+/* top progress */
+#progressBar{position:fixed;top:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--primary));width:0;z-index:99}
+/* header */
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--card) 88%, transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;max-width:1200px;margin:auto;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.15rem}
+.logo-badge{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--primary),#6aa6ff);display:grid;place-items:center;color:#fff;font-size:1.4rem;box-shadow:var(--shadow)}
+.nav-links{display:flex;gap:8px;flex-wrap:wrap}
+.nav-links a{padding:8px 14px;border-radius:999px;font-size:.9rem;font-weight:700;color:var(--muted);border:1px solid transparent}
+.nav-links a:hover,.nav-links a.active{background:var(--primary);color:#fff}
+.actions{display:flex;gap:8px;align-items:center}
+.btn{border:1px solid var(--border);background:var(--card);color:var(--ink);padding:8px 14px;border-radius:999px;cursor:pointer;font-family:inherit;font-weight:700;font-size:.88rem;display:inline-flex;align-items:center;gap:6px;transition:.2s}
+.btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+.btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+.btn.accent{background:var(--accent);color:#1a1000;border-color:var(--accent)}
+.search-box{display:flex;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:999px;padding:6px 14px;gap:8px;min-width:200px}
+.search-box input{border:0;outline:0;background:transparent;color:var(--ink);font-family:inherit;width:100%}
+/* hero */
+.hero{background:linear-gradient(135deg,#0e63b6 0%,#164e9c 45%,#0b2f63 100%);color:#fff;border-radius:24px;margin:18px auto;padding:46px 30px;position:relative;overflow:hidden;max-width:1200px}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero::before{width:340px;height:340px;left:-80px;top:-80px}
+.hero::after{width:220px;height:220px;right:10%;bottom:-90px}
+.hero h1{font-size:2rem;font-weight:900;line-height:1.5;margin-bottom:10px;position:relative}
+.hero p{opacity:.92;max-width:700px;position:relative}
+.hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0;position:relative}
+.tag{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);padding:5px 14px;border-radius:999px;font-size:.85rem;font-weight:700}
+.hero-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-top:18px;position:relative}
+.stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:12px;text-align:center}
+.stat b{font-size:1.5rem;display:block}
+.hero-cta{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;position:relative}
+/* layout */
+.layout{display:grid;grid-template-columns:280px 1fr;gap:18px;max-width:1200px;margin:0 auto 40px;padding:0 18px;align-items:start}
+aside.toc{position:sticky;top:74px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow);max-height:calc(100vh - 90px);overflow:auto}
+.toc h3{font-size:.95rem;margin-bottom:8px;color:var(--muted)}
+.toc a{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;font-size:.88rem;font-weight:600;color:var(--muted)}
+.toc a:hover{background:var(--bg);color:var(--ink)}
+.toc a.active{background:#e8f1ff;color:var(--primary2)}
+[data-theme="dark"] .toc a.active{background:#162a4d;color:#fff}
+.toc .num{width:26px;height:26px;border-radius:8px;background:var(--bg);border:1px solid var(--border);display:grid;place-items:center;font-size:.8rem;flex-shrink:0}
+main{display:flex;flex-direction:column;gap:16px;min-width:0}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);scroll-margin-top:84px}
+.card h2{display:flex;align-items:center;gap:10px;font-size:1.25rem;margin-bottom:10px}
+.icon{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:1.25rem;color:#fff;flex-shrink:0}
+.card p.lead{color:var(--muted);margin-bottom:12px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.mini{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:12px;font-size:.92rem}
+.mini b{color:var(--primary)}
+table{width:100%;border-collapse:collapse;font-size:.9rem;margin:10px 0;background:var(--card);border-radius:12px;overflow:hidden}
+th,td{border:1px solid var(--border);padding:9px 10px;text-align:right}
+th{background:var(--primary);color:#fff}
+tr:nth-child(even) td{background:color-mix(in srgb, var(--bg) 70%, transparent)}
+.check{display:flex;gap:10px;align-items:flex-start;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:9px 12px;margin:7px 0;cursor:pointer;transition:.2s;font-size:.93rem}
+.check:hover{border-color:var(--primary)}
+.check input{margin-top:7px;accent-color:var(--primary);width:17px;height:17px;flex-shrink:0}
+.check.done{opacity:.6;text-decoration:line-through}
+.quote{background:linear-gradient(90deg,#fff7e6,#fff);border-right:4px solid var(--accent);padding:12px 14px;border-radius:10px;margin:12px 0;font-weight:700;color:#7a4a00}
+[data-theme="dark"] .quote{background:#241c08;color:#ffd88a}
+.kpi-bar{background:var(--bg);border-radius:999px;height:12px;overflow:hidden;border:1px solid var(--border);margin:6px 0 12px}
+.kpi-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent2),var(--primary));width:0;transition:width 1.2s ease}
+.template{background:#0f1e38;color:#e6efff;border-radius:12px;padding:14px;font-size:.9rem;position:relative;margin:10px 0;white-space:pre-line}
+.template button{position:absolute;top:10px;left:10px}
+.steps{counter-reset:s;color:var(--muted)}
+.steps li{list-style:none;padding:8px 0 8px 0;display:flex;gap:10px}
+.steps li::before{counter-increment:s;content:counter(s);width:28px;height:28px;border-radius:50%;background:var(--primary);color:#fff;display:grid;place-items:center;font-weight:800;flex-shrink:0;font-size:.85rem}
+/* quiz */
+.quiz-q{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:12px;margin:8px 0}
+.quiz-q label{display:block;padding:6px 10px;border-radius:8px;cursor:pointer}
+.quiz-q label:hover{background:var(--card)}
+#quizResult{font-weight:800;margin-top:10px;padding:12px;border-radius:10px;display:none}
+/* dashboard */
+.dash{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:12px 0}
+.dash-card{background:linear-gradient(135deg,var(--card),var(--bg));border:1px solid var(--border);border-radius:14px;padding:14px;text-align:center}
+.dash-card .big{font-size:1.8rem;font-weight:900;color:var(--primary)}
+footer{text-align:center;padding:26px;color:var(--muted);font-size:.9rem}
+.topbar{background:linear-gradient(90deg,#0b2f63,#0e63b6 50%,#0b2f63);color:#fff;text-align:center;padding:10px 14px;font-size:.88rem;font-weight:700;line-height:2;border-bottom:2px solid #f59e0b}
+.topbar .t-line{display:block}
+.topbar .t-main{font-size:1rem;font-weight:900;color:#ffd88a}
+.topbar .t-sub{opacity:.9;font-weight:600;font-size:.82rem}
+.topbar.official{line-height:2;background:linear-gradient(180deg,#ffffff 0%,#f1f5f9 100%);color:#0b2f63;border-bottom:3px double #0e63b6;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;text-align:right}
+.topbar.official .official-text{flex:1}
+.topbar.official .o1{font-size:1rem;font-weight:900}
+.topbar.official .o1{font-size:1rem;font-weight:900}
+.topbar.official .o2{font-size:.95rem;font-weight:800;color:#0e63b6}
+.topbar.official .o3{font-size:.88rem;font-weight:700}
+.topbar.official .o4{font-size:.88rem;font-weight:800;background:#0e63b6;color:#fff;display:inline-block;padding:2px 18px;border-radius:999px;margin-top:4px}
+.moe-logo{height:85px;width:auto;display:block;object-fit:contain;flex-shrink:0;margin:0}
+@media print{.moe-logo{height:65px}}
+@media(max-width:600px){.topbar.official{flex-direction:column;text-align:center}.topbar.official .official-text{text-align:center}}
+footer .rights{background:linear-gradient(135deg,#0b2f63,#0e63b6 60%,#1d9bf0);color:#fff;border-radius:16px;padding:18px;line-height:2;font-weight:800;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.2);text-align:center}
+footer .rights .r1{font-size:1.05rem;color:#ffd88a;display:block}
+footer .rights .r2{font-size:1rem;display:block}
+footer .rights .r3{font-size:.95rem;opacity:.95;display:block}
+footer .rights small{display:block;font-weight:600;opacity:.85;margin-top:8px;border-top:1px solid rgba(255,255,255,.25);padding-top:8px;font-size:.8rem}
+#toTop{position:fixed;bottom:18px;left:18px;width:46px;height:46px;border-radius:50%;background:var(--primary);color:#fff;border:0;font-size:1.3rem;cursor:pointer;display:none;box-shadow:var(--shadow);z-index:60}
+.toast{position:fixed;bottom:20px;right:50%;transform:translateX(50%) translateY(20px);background:#111c33;color:#fff;padding:10px 20px;border-radius:999px;opacity:0;transition:.3s;z-index:100;font-weight:700}
+.toast.show{opacity:1;transform:translateX(50%) translateY(0)}
+mark{background:#ffef9e;padding:0 4px;border-radius:4px}
+@media(max-width:920px){.layout{grid-template-columns:1fr}aside.toc{position:static;max-height:none}.grid2,.grid3{grid-template-columns:1fr}.hero h1{font-size:1.45rem}.nav-links{display:none}}
+@media print{header,aside.toc,#toTop,.actions,.search-box,.hero-cta{display:none!important}.layout{grid-template-columns:1fr}.card{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body>
+<div id="progressBar"></div>
+<div class="topbar official"><div class="official-text"><span class="t-line o1">المملكة العربية السعودية</span><span class="t-line o2">وزارة التعليم</span><span class="t-line o3">الإدارة العامة للتعليم بمنطقة عسير</span><span class="t-line o4">المتوسطة الرابعة والدمج الفكري</span></div><img src="moe-logo.png" alt="شعار وزارة التعليم السعودي" class="moe-logo"></div>
+
+<header>
+  <div class="nav">
+    <div class="logo"><span class="logo-badge">🎓</span> سكرتير محترف <span style="color:var(--muted);font-weight:400;font-size:.85rem">| التعليم</span></div>
+    <nav class="nav-links" id="topNav">
+      <a href="#start">البداية</a>
+      <a href="#tasks">المهام</a>
+      <a href="#skills">المهارات</a>
+      <a href="#archive">الأرشفة</a>
+      <a href="#exams">الاختبارات</a>
+      <a href="#templates">القوالب</a>
+      <a href="#quiz">اختبر نفسك</a>
+    </nav>
+    <div class="actions">
+      <div class="search-box">🔍 <input id="searchInput" placeholder="ابحث في الدليل..."></div>
+      <button class="btn" id="themeBtn">🌙 ليلي</button>
+      <button class="btn primary" onclick="window.print()">🖨 طباعة</button>
+    </div>
+  </div>
+</header>
+
+<div class="hero container" id="start">
+  <h1>🎓 الدليل المتكامل للسكرتير المحترف في التعليم</h1>
+  <p>مرجعك العملي للإدارة المدرسية الحديثة: التنظيم، التوثيق، الاتصال، الجودة. من موظف عادي إلى شريك لا غنى عنه في القيادة التربوية.</p>
+  <div class="hero-tags"><span class="tag">📋 16 قسماً</span><span class="tag">✅ قوائم فحص تفاعلية</span><span class="tag">📄 قوالب جاهزة للنسخ</span><span class="tag">📊 مؤشرات أداء</span><span class="tag">📝 اختبار ذاتي</span></div>
+  <div class="hero-stats">
+    <div class="stat"><b>80%</b> من المشكلات يعالجها السكرتير المحترف باستقلالية</div>
+    <div class="stat"><b>24</b> ساعة زمن إنجاز المعاملة العادية</div>
+    <div class="stat"><b>0%</b> نسبة الخطأ المستهدفة في البيانات</div>
+    <div class="stat"><b>90%+</b> رضا المستفيدين المستهدف</div>
+  </div>
+  <div class="hero-cta">
+    <a class="btn accent" href="#tasks">🚀 ابدأ التعلم</a>
+    <a class="btn" style="background:#fff;color:#0e63b6" href="#templates">📄 القوالب الجاهزة</a>
+    <span class="btn" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.3)" id="overallProgress">التقدم: 0%</span>
+  </div>
+</div>
+
+<div class="layout">
+<aside class="toc" id="toc">
+  <h3>📑 محتويات الدليل</h3>
+  <div id="tocLinks"></div>
+  <hr style="border:0;border-top:1px solid var(--border);margin:10px 0">
+  <button class="btn" id="resetBtn" style="width:100%;justify-content:center">↺ تصفير التقدم</button>
+</aside>
+
+<main id="content">
+<!-- 1 -->
+<section class="card" id="s1" data-title="مفهوم السكرتارية والفرق بين التقليدي والمحترف">
+  <h2><span class="icon" style="background:#0e63b6">💡</span> 1. مفهوم السكرتارية في التعليم</h2>
+  <p class="lead">السكرتير هو العمود الفقري للإدارة المدرسية وحلقة الوصل بين المدير والمعلمين والطلاب وأولياء الأمور.</p>
+  <table><tr><th>وجه المقارنة</th><th>التقليدي</th><th>المحترف ⭐</th></tr>
+  <tr><td>الدور</td><td>تنفيذ أوامر فقط</td><td>شريك في الإدارة وصناعة القرار</td></tr>
+  <tr><td>التقنية</td><td>طباعة أساسية</td><td>أنظمة نور / فارس / مدرستي + أرشفة إلكترونية</td></tr>
+  <tr><td>الاتصال</td><td>يرد على الهاتف</td><td>يدير العلاقات العامة للمدرسة</td></tr>
+  <tr><td>الأرشفة</td><td>ملفات مبعثرة</td><td>ترميز دقيق ورقي + إلكتروني</td></tr>
+  <tr><td>المشكلات</td><td>يحوّلها للمدير</td><td>يعالج 80% باستقلالية</td></tr></table>
+  <div class="quote">القاعدة الذهبية: السكرتير الناجح يجعل مديره متفرغاً للقيادة التربوية ويتحمل هو العبء الإداري اليومي.</div>
+  <label class="check"><input type="checkbox" data-sec="s1"> أقررت أن أكون شريكاً في الإدارة لا منفذاً فقط</label>
+</section>
+
+<!-- 2 -->
+<section class="card" id="s2" data-title="المهام اليومية والأسبوعية والشهرية">
+  <h2><span class="icon" style="background:#7c3aed">📋</span> 2. المهام والمسؤوليات</h2>
+  <p class="lead">نظّم عملك بدورات زمنية واضحة حتى لا يضيع شيء في الزحام.</p>
+  <div class="grid2">
+    <div class="mini"><b>☀️ يومياً</b><br>فتح المكتب، البريد الوارد، جدول المدير، الغياب، الرد على الاستفسارات، المذكرات والتعاميم.</div>
+    <div class="mini"><b>📅 أسبوعياً</b><br>محاضر الاجتماعات ومتابعة القرارات، تحديث قواعد البيانات، مراجعة المخزون، التقرير الأسبوعي.</div>
+    <div class="mini"><b>🗓 شهرياً</b><br>الإجازات والرواتب، ملفات الاختبارات، النتائج، إحصائيات الغياب والنجاح، ملفات الجودة.</div>
+    <div class="mini"><b>🎓 سنوياً</b><br>القبول والتسجيل، الجداول الدراسية، الجرد السنوي، إغلاق الأرشيف.</div>
+  </div>
+  <h3 style="margin-top:12px">✅ قائمة المهام اليومية (تُحفظ تلقائياً)</h3>
+  <div id="dailyChecks">
+    <label class="check"><input type="checkbox" data-k="d1"> مراجعة البريد الوارد ورقي + إلكتروني</label>
+    <label class="check"><input type="checkbox" data-k="d2"> تنظيم جدول المدير واستقبال الزوار</label>
+    <label class="check"><input type="checkbox" data-k="d3"> تسجيل الغياب والتأخر ورفع التقرير</label>
+    <label class="check"><input type="checkbox" data-k="d4"> طباعة وتنسيق المذكرات والتعاميم</label>
+    <label class="check"><input type="checkbox" data-k="d5"> مراجعة قائمة المهام قبل المغادرة</label>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="card" id="tasks" data-title="المهارات المكتبية والاتصال">
+  <h2><span class="icon" style="background:#059669">🛠</span> 3. المهارات الاحترافية</h2>
+  <div class="grid3">
+    <div class="mini"><b>⌨️ مكتبية</b><br>طباعة 40 كلمة/دقيقة، Word وExcel (SUM, AVERAGE, COUNTIF, VLOOKUP)، العروض والبريد.</div>
+    <div class="mini"><b>📞 اتصال</b><br>الرد خلال 3 رنات، الإنصات وتدوين الملاحظات، الصياغة الرسمية، ضبط النفس مع الشكاوى.</div>
+    <div class="mini"><b>🤝 شخصية</b><br>السرية، الدقة، إدارة الوقت، المبادرة تحت الضغط، المظهر اللائق.</div>
+  </div>
+  <div class="quote">النموذج الاحترافي للرد: «السلام عليكم، مدرسة [الاسم]، معك [اسمك] سكرتارية الإدارة، كيف أقدر أخدمك؟»</div>
+  <label class="check"><input type="checkbox" data-sec="s3"> أتدرب على مهارة جديدة هذا الشهر (إكسل متقدم / صياغة / إنجليزية إدارية)</label>
+</section>
+
+<!-- 4 -->
+<section class="card" id="s4" data-title="إدارة مكتب المدير وجدول المواعيد">
+  <h2><span class="icon" style="background:#dc2626">🏢</span> 4. إدارة مكتب المدير</h2>
+  <ol class="steps">
+    <li><span><b>جدول المواعيد:</b> تقويم مشترك، وثّق الاسم والجهة والموضوع والمدة، واترك 15 دقيقة فاصلة.</span></li>
+    <li><span><b>فلترة الزوار:</b> عاجل / مهم / يُؤجّل / يُحوّل للوكيل. لا إدخال دون استئذان.</span></li>
+    <li><span><b>ملف التوقيع:</b> أقسام (للتوقيع / للمراجعة / للعلم) مع لاصقات، max عشر معاملات دفعة واحدة.</span></li>
+    <li><span><b>التذكير الاستباقي:</b> قبل الاجتماع بساعة وقبل الموعد الخارجي بيوم مع تجهيز الملفات.</span></li>
+  </ol>
+</section>
+
+<!-- 5 -->
+<section class="card" id="s5" data-title="المراسلات الإدارية والصياغة">
+  <h2><span class="icon" style="background:#ea580c">✉️</span> 5. المراسلات والصياغة الرسمية</h2>
+  <p class="lead">عناصر الخطاب: الترويسة والشعار ← رقم الصادر والتاريخ ← الموجّه إليه ← الموضوع ← مقدمة وعرض وخاتمة ← التوقيع والختم ← المرفقات.</p>
+  <div class="mini">⚠️ <b>تجنّب:</b> الأخطاء الإملائية، الحشو والإطالة، العامية والرموز التعبيرية، نسيان المرفقات، الإرسال دون مراجعة ثانية.</div>
+  <div class="template" id="tpl1">تعميم رقم (5) بتاريخ ... / ... / ...
+الإخوة والأخوات المعلمون والمعلمات المحترمون
+السلام عليكم ورحمة الله وبركاته وبعد:
+نفيدكم بأن اجتماع مجلس المعلمين سيعقد يوم ... الساعة ... في قاعة ...
+نأمل الحضور والالتزام، شاكرين تعاونكم.
+مدير المدرسة / ................... <button class="btn accent" onclick="copyText('tpl1')">📋 نسخ</button></div>
+</section>
+
+<!-- 6 -->
+<section class="card" id="archive" data-title="الأرشفة والتوثيق ونظام الترميز">
+  <h2><span class="icon" style="background:#0891b2">🗂</span> 6. الأرشفة والتوثيق</h2>
+  <table><tr><th>الرمز</th><th>الملف</th></tr>
+  <tr><td>100</td><td>الإدارة والتنظيم</td></tr><tr><td>200</td><td>شؤون الموظفين</td></tr>
+  <tr><td>300</td><td>شؤون الطلاب</td></tr><tr><td>400</td><td>الاختبارات</td></tr>
+  <tr><td>500</td><td>المالية والعهد</td></tr><tr><td>600</td><td>الصادر والوارد</td></tr>
+  <tr><td>700</td><td>الجودة والاعتماد</td></tr><tr><td>800</td><td>الأنشطة والفعاليات</td></tr></table>
+  <div class="mini"><b>القواعد الذهبية:</b> كل ورقة لها بيت • سجل يومي للوارد والصادر • مسح ضوئي PDF بتسمية <span dir="ltr">2026-تعميم-05.pdf</span> • نسخة احتياطية أسبوعية • ملفات النتائج حفظ دائم.</div>
+</section>
+
+<!-- 7-8 -->
+<section class="card" id="s7" data-title="الاجتماعات وشؤون الطلاب">
+  <h2><span class="icon" style="background:#4f46e5">👥</span> 7. الاجتماعات + 8. شؤون الطلاب</h2>
+  <div class="grid2">
+    <div class="mini"><b>قبل الاجتماع:</b> دعوة + جدول أعمال قبل 48 ساعة، تجهيز القاعة وقائمة الحضور.<br><b>أثناء:</b> تسجيل الحضور والقرارات والتكليفات (من/ماذا/متى).<br><b>بعد:</b> محضر + متابعة التنفيذ وتذكير المعنيين.</div>
+    <div class="mini"><b>الطلاب:</b> دقق الهويات وملفات الانتقال، رقم موحد لكل طالب، رصد الغياب وإشعار الولي، الشهادات بتوقيع وختم وسجل خاص، بيانات صحية وأسرية سرية تماماً.</div>
+  </div>
+  <div class="template" id="tpl2">ولي أمر الطالب (...) المحترم
+نفيدكم بأن ابنكم تغيب يوم ... دون عذر، نأمل التواصل مع الإدارة خلال 48 ساعة.
+شاكرين تعاونكم. إدارة المدرسة<button class="btn accent" onclick="copyText('tpl2')">📋 نسخ</button></div>
+</section>
+
+<!-- 9 -->
+<section class="card" id="exams" data-title="الاختبارات واللجان والرصد">
+  <h2><span class="icon" style="background:#b91c1c">📝</span> 9. الاختبارات — المهمة الأكثر حساسية</h2>
+  <div class="grid2">
+    <div class="mini">🔒 استلام الأسئلة بمظاريف مختومة + خزانة مقفلة + سجل استلام وتسليم.<br>📑 تجهيز: الجداول، المناداة، أرقام الجلوس، محاضر فتح المظاريف والغياب والغش.</div>
+    <div class="mini">👁 تنظيم لجان المراقبة والتصحيح والرصد.<br>✅ مطابقة الكشوف مع الأوراق قبل الإعلان + نسخة معتمدة محفوظة.<br>⛔ أي تسريب أو خطأ رصد = مسؤولية مباشرة. الدقة غير قابلة للمساومة.</div>
+  </div>
+  <label class="check"><input type="checkbox" data-k="e1"> خزانة الأسئلة مقفلة وسجل الاستلام جاهز</label>
+  <label class="check"><input type="checkbox" data-k="e2"> كشوف المناداة وأرقام الجلوس مطبوعة</label>
+  <label class="check"><input type="checkbox" data-k="e3"> محاضر الغياب والغش وفتح المظاريف جاهزة</label>
+</section>
+
+<!-- 10-12 -->
+<section class="card" id="skills" data-title="أولياء الأمور والتقنية وإدارة الوقت">
+  <h2><span class="icon" style="background:#0d9488">💬</span> 10-12. أولياء الأمور • التقنية • الوقت</h2>
+  <div class="grid3">
+    <div class="mini"><b>🤝 أولياء الأمور</b><br>رحّب وقف وعرّف بنفسك. أنصت دون مقاطعة: «أتفهم قلقكم وسنتابع». حدد موعد رد والتزم به. لا تناقش مستوى طالب أمام الآخرين.</div>
+    <div class="mini"><b>💻 سكرتير رقمي</b><br>أنظمة نور/فارس/مدرستي، البريد الرسمي، Sheets للتقارير، Drive للنسخ، Zoom/Teams، كلمات مرور قوية وعدم فتح روابط مجهولة.</div>
+    <div class="mini"><b>⏰ مصفوفة الأولويات</b><br>مهم+عاجل ← نفّذ فوراً. مهم+غير عاجل ← جدول له. غير مهم+عاجل ← فوّض. غير مهم+غير عاجل ← احذف. ابدأ بأصعب مهمة + ساعة باب مغلق يومياً.</div>
+  </div>
+</section>
+
+<!-- 13-14 -->
+<section class="card" id="s13" data-title="الأخلاقيات وإدارة الأزمات">
+  <h2><span class="icon" style="background:#6d28d9">🛡</span> 13. الأخلاقيات + 14. الأزمات</h2>
+  <div class="grid2">
+    <div class="mini"><b>الأخلاقيات:</b> السرية — ما يُسمع في مكتب المدير يبقى فيه • الحياد والعدالة • النزاهة ورفض الهدايا مقابل الخدمات • القدوة في الدوام • الولاء وعدم نقل الأسرار.</div>
+    <div class="mini"><b>الطوارئ:</b> أرقام الطوارئ وقوائم الطلاب مطبوعة وجاهزة • حالة صحية: إسعاف + ولي الأمر + توثيق • بدائل ورقية عند انقطاع النظام • الشائعات: لا تعليق، حوّل للمدير • تقرير بعد كل أزمة.</div>
+  </div>
+  <div class="quote">السكرتير يرى كل شيء ويسمع كل شيء ويقول فقط ما يجب قوله.</div>
+</section>
+
+<!-- 15 -->
+<section class="card" id="s15" data-title="الجودة ومؤشرات الأداء KPIs">
+  <h2><span class="icon" style="background:#ca8a04">📊</span> 15. الجودة ومؤشرات الأداء</h2>
+  <div class="dash">
+    <div class="dash-card"><div class="big" data-count="24">0</div><small>ساعة لإنجاز المعاملة</small><div class="kpi-bar"><div class="kpi-fill" data-w="85%"></div></div></div>
+    <div class="dash-card"><div class="big" data-count="100">0</div><small>% اكتمال الأرشفة</small><div class="kpi-bar"><div class="kpi-fill" data-w="100%"></div></div></div>
+    <div class="dash-card"><div class="big" data-count="90">0</div><small>% رضا المستفيدين</small><div class="kpi-bar"><div class="kpi-fill" data-w="90%"></div></div></div>
+    <div class="dash-card"><div class="big" data-count="0">0</div><small>% أخطاء البيانات</small><div class="kpi-bar"><div class="kpi-fill" data-w="100%"></div></div></div>
+  </div>
+  <div class="mini"><b>🎯 خطة التطوير السنوية:</b> دورة أنظمة مدرسية + دورة مراسلات + 4 كتب إدارة سنوياً + مهارة جديدة (Canva / إكسل متقدم / إنجليزية إدارية).</div>
+</section>
+
+<!-- templates -->
+<section class="card" id="templates" data-title="قوالب وسجلات جاهزة">
+  <h2><span class="icon" style="background:#16a34a">📄</span> 16. قوالب وسجلات جاهزة</h2>
+  <div class="grid2">
+    <div class="template" id="tpl3">سجل الوارد اليومي:
+م | التاريخ | رقم الوارد | الجهة | الموضوع | محوّل إلى | الإجراء<button class="btn accent" onclick="copyText('tpl3')">📋 نسخ</button></div>
+    <div class="template" id="tpl4">سجل الصادر:
+م | التاريخ | رقم الصادر | الجهة | الموضوع | المرفقات | المستلم<button class="btn accent" onclick="copyText('tpl4')">📋 نسخ</button></div>
+  </div>
+  <h3>✅ فحص بداية العام</h3>
+  <label class="check"><input type="checkbox" data-k="y1"> ملفات الطلاب الجدد مكتملة</label>
+  <label class="check"><input type="checkbox" data-k="y2"> الجداول والقوائم والمناداة جاهزة</label>
+  <label class="check"><input type="checkbox" data-k="y3"> سجلات الوارد والصادر جديدة + بيانات النظام محدثة</label>
+  <label class="check"><input type="checkbox" data-k="y4"> القرطاسية والأختام ولوحة الإعلانات جاهزة</label>
+  <h3>✅ فحص نهاية العام</h3>
+  <label class="check"><input type="checkbox" data-k="z1"> النتائج معتمدة ومحفوظة + الشهادات موثقة</label>
+  <label class="check"><input type="checkbox" data-k="z2"> الجرد مكتمل + الأرشيف مغلق + تقرير الإنجاز مسلّم</label>
+</section>
+
+<!-- quiz -->
+<section class="card" id="quiz" data-title="اختبر نفسك">
+  <h2><span class="icon" style="background:#db2777">📝</span> اختبر نفسك: هل أنت سكرتير محترف؟</h2>
+  <p class="lead">أجب عن 5 أسئلة واحصل على نتيجتك فوراً.</p>
+  <div class="quiz-q"><b>1. كم المدة المثالية للرد على الهاتف؟</b>
+    <label><input type="radio" name="q1" value="0"> بعد 10 رنات</label>
+    <label><input type="radio" name="q1" value="1"> خلال 3 رنات مع التعريف بالمدرسة</label>
+    <label><input type="radio" name="q1" value="0"> لا ترد إلا للضرورة</label></div>
+  <div class="quiz-q"><b>2. أين تُحفظ أسئلة الاختبارات؟</b>
+    <label><input type="radio" name="q2" value="0"> على المكتب لتسهيل الوصول</label>
+    <label><input type="radio" name="q2" value="1"> مظاريف مختومة في خزانة مقفلة مع سجل</label>
+    <label><input type="radio" name="q2" value="0"> في درج مفتوح</label></div>
+  <div class="quiz-q"><b>3. ما مدة حفظ ملفات نتائج الطلاب؟</b>
+    <label><input type="radio" name="q3" value="1"> حفظ دائم</label>
+    <label><input type="radio" name="q3" value="0"> شهر واحد</label>
+    <label><input type="radio" name="q3" value="0"> تُتلف نهاية العام</label></div>
+  <div class="quiz-q"><b>4. وصلتك شكوى غاضبة من ولي أمر، ماذا تفعل؟</b>
+    <label><input type="radio" name="q4" value="1"> أنصت ودوّن وحدد موعداً للرد والتزم به</label>
+    <label><input type="radio" name="q4" value="0"> تجادله وترفع صوتك</label>
+    <label><input type="radio" name="q4" value="0"> تتجاهله تماماً</label></div>
+  <div class="quiz-q"><b>5. ما أول خطوة في الأرشفة الاحترافية؟</b>
+    <label><input type="radio" name="q5" value="0"> رمي الأوراق القديمة</label>
+    <label><input type="radio" name="q5" value="1"> كل ورقة لها ملف مرمّز + سجل وارد وصادر</label>
+    <label><input type="radio" name="q5" value="0"> تكديسها في درج واحد</label></div>
+  <button class="btn primary" onclick="gradeQuiz()">تصحيح النتيجة ✅</button>
+  <div id="quizResult"></div>
+</section>
+
+<section class="card" style="text-align:center;background:linear-gradient(135deg,#0e63b6,#1d9bf0);color:#fff;border:0">
+  <h2 style="justify-content:center">🎯 خطوتك التالية هذا الأسبوع</h2>
+  <p>1. أنشئ مجلدات الأرشفة الثمانية (100-800) &nbsp;•&nbsp; 2. جهّز 10 قوالب لأكثر معاملاتك تكراراً &nbsp;•&nbsp; 3. فعّل النسخ الاحتياطي الأسبوعي</p>
+  <div style="margin-top:10px"><button class="btn accent" onclick="window.print()">🖨 اطبع الدليل</button></div>
+</section>
+</main>
+</div>
+
+<footer><div class="rights"><span class="r1">© جميع الحقوق محفوظة | تصميم السكرتارية : أ / نجمة العمري</span><span class="r2">🏫 المتوسطة الرابعة بخميس مشيط</span><span class="r3">🎓 إدارة التعليم بمنطقة عسير</span><small>الدليل العملي للسكرتارية المدرسية — نسخة تفاعلية 1.0 • يعمل دون إنترنت بعد التحميل • تقدمك محفوظ في متصفحك 🔒</small></div></footer>
+<button id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<div class="toast" id="toast">تم ✅</div>
+
+<script>
+// TOC build
+const sections=[...document.querySelectorAll('main .card[id]')];
+const toc=document.getElementById('tocLinks');
+sections.forEach((s,i)=>{
+  const a=document.createElement('a');a.href='#'+s.id;
+  a.innerHTML=`<span class="num">${i+1}</span> ${s.dataset.title||s.querySelector('h2').innerText.slice(0,30)}`;
+  toc.appendChild(a);
+});
+// active link + progress
+const links=[...toc.querySelectorAll('a')];
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  const p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+  document.getElementById('progressBar').style.width=p+'%';
+  document.getElementById('toTop').style.display=h.scrollTop>500?'block':'none';
+  let cur=sections[0].id;
+  sections.forEach(s=>{if(scrollY>=s.offsetTop-120)cur=s.id});
+  links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+  document.querySelectorAll('#topNav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+  // animate kpi
+  document.querySelectorAll('.kpi-fill').forEach(el=>{
+    const r=el.getBoundingClientRect();
+    if(r.top<innerHeight)el.style.width=el.dataset.w;
+  });
+},{passive:true});
+// theme
+const themeBtn=document.getElementById('themeBtn');
+function setTheme(t){document.documentElement.dataset.theme=t;localStorage.setItem('sec-theme',t);themeBtn.textContent=t==='dark'?'☀️ نهاري':'🌙 ليلي'}
+setTheme(localStorage.getItem('sec-theme')||'light');
+themeBtn.onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
+// checkboxes persist + progress
+const boxes=[...document.querySelectorAll('input[type=checkbox]')];
+const saved=JSON.parse(localStorage.getItem('sec-checks')||'{}');
+boxes.forEach(b=>{
+  const k=b.dataset.k||b.dataset.sec||b.outerHTML.slice(0,20);
+  b.dataset.key=k;
+  if(saved[k]){b.checked=true;b.closest('.check')?.classList.add('done')}
+  b.addEventListener('change',()=>{
+    saved[k]=b.checked;localStorage.setItem('sec-checks',JSON.stringify(saved));
+    b.closest('.check')?.classList.toggle('done',b.checked);
+    updateProgress();toast(b.checked?'أحسنت! تم الإنجاز ✅':'تمت الإزالة');
+  });
+});
+function updateProgress(){
+  const done=boxes.filter(b=>b.checked).length;
+  const p=Math.round(done/boxes.length*100);
+  document.getElementById('overallProgress').textContent=`التقدم: ${p}% (${done}/${boxes.length})`;
+}
+updateProgress();
+document.getElementById('resetBtn').onclick=()=>{localStorage.removeItem('sec-checks');location.reload()};
+// search with highlight
+const searchInput=document.getElementById('searchInput');
+searchInput.addEventListener('input',()=>{
+  const q=searchInput.value.trim();
+  document.querySelectorAll('mark').forEach(m=>m.replaceWith(document.createTextNode(m.textContent)));
+  sections.forEach(s=>s.style.display='');
+  if(!q)return;
+  sections.forEach(s=>{
+    if(!s.innerText.includes(q)){s.style.display='none'}
+    else{
+      const walker=document.createTreeWalker(s,NodeFilter.SHOW_TEXT);
+      const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+      nodes.forEach(n=>{
+        if(n.nodeValue.includes(q)&&n.parentElement.tagName!=='SCRIPT'){
+          const span=document.createElement('span');span.innerHTML=n.nodeValue.split(q).join(`<mark>${q}</mark>`);
+          n.replaceWith(span);
+        }
+      });
+    }
+  });
+});
+// copy
+function copyText(id){
+  const t=document.getElementById(id).innerText.replace('📋 نسخ','').trim();
+  navigator.clipboard.writeText(t).then(()=>toast('تم نسخ القالب 📋'));
+}
+function toast(m){const e=document.getElementById('toast');e.textContent=m;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),1800)}
+// quiz
+function gradeQuiz(){
+  let s=0;for(let i=1;i<=5;i++){const v=document.querySelector(`input[name=q${i}]:checked`);if(v)s+=+v.value}
+  const r=document.getElementById('quizResult');r.style.display='block';
+  if(s===5){r.style.background='#dcfce7';r.style.color='#14532d';r.textContent='🏆 ممتاز! 5/5 — أنت سكرتير محترف بجدارة'}
+  else if(s>=3){r.style.background='#fef9c3';r.style.color='#713f12';r.textContent=`👍 جيد! ${s}/5 — راجع أقسام الأرشفة والاختبارات`}
+  else{r.style.background='#fee2e2';r.style.color='#7f1d1d';r.textContent=`📚 تحتاج مراجعة: ${s}/5 — أعد قراءة الدليل من البداية`}
+  r.scrollIntoView({behavior:'smooth',block:'center'});
+}
+// counters
+const counters=document.querySelectorAll('[data-count]');
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;io.unobserve(e.target);
+  const end=+e.target.dataset.count;let cur=0;
+  const t=setInterval(()=>{cur+=Math.ceil(end/30);if(cur>=end){cur=end;clearInterval(t)}e.target.textContent=cur},50);
+}));
+counters.forEach(c=>io.observe(c));
+</script>
+</body>
+</html>
